@@ -44,17 +44,3 @@ program day4
   print*, "In ", pairs, "pairs, there is an overlapping"
 
 end program day4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
