@@ -2,8 +2,7 @@
 program day9
     implicit none
 
-    ! set a grid size large enough to map the positions of the rope knots
-    integer :: grid(-300:300,-300:300) ! 2d cartesian grid
+    integer, allocatable :: grid(:,:)
     integer, parameter :: read_unit = 99
     character(len=1) :: direction
     integer :: i, k, n, visited, ios
@@ -12,6 +11,8 @@ program day9
     open(unit=read_unit, file='data.dat', iostat=ios)
     if ( ios /= 0 ) stop "Error opening file data.dat"
 
+    ! set a grid size large enough to map the positions of the rope knots
+    allocate(grid(-300:300,-300:300)) ! 2d cartesian grid)
     allocate (head(2),tail(2))
     head(:) = 0; tail(:) = 0; grid(:,:) = 0
     grid(0,0) = 1 ! head and tail both start at 0,0 position

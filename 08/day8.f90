@@ -13,7 +13,7 @@ program day8
     open(unit=read_unit, file='data.dat', iostat=ios)
     if ( ios /= 0 ) stop "Error opening file data.dat"
 
-    visible(:,:) = .false. ! set full array as FALSE
+    visible(:,:) = .false. ! set full array as .false.
     do i=1,nrows
         read (read_unit,'(*(I1))') trees(i,:) ! read each line of file as an array of integers
     end do
@@ -41,7 +41,7 @@ program day8
         enddo
     enddo
 
-    ! Count occurrences of TRUE in visible array
+    ! Count occurrences of .true. in visible array
     print*, "trees visible: ", count(visible)
 
     maxscore = 0 ! initialize maximum score
